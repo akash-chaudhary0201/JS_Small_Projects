@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Font Awesome 5 Icons</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    body{
+        min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* background: #010718; */
+    }
+    .bell{
+        font-size: 40px;
+        color: white;
+    }
+    button{
+        background-color: #003049;
+        display: flex;
+        height: 100px;
+        width: 100px;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        border-radius: 50%;
+        margin: 30px;
+        border: 1px solid #003049;
+        cursor: pointer;
+    }
+    button::after, 
+    button:before{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        background-color: #003049;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        opacity: 0.7;
+    }
+    button:before{
+        animation: anime 2s ease-out infinite;
+    }
+    button:after{
+        animation: anime 2s 1s ease-out infinite;
+    }
+    @keyframes anime {
+        100%{
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+</style>
+</head>
+<body>
+
+    
+    
+        <button><i class=" bell fa-solid fa-bell"></i></button>
+
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+</body>
+</html>
+

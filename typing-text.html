@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        *{
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #010718;
+            overflow: hidden;
+        }
+        .container{
+            overflow-x: hidden;
+        }
+        .container .text{
+            position: relative;
+            color: #4070f4;
+            font-size: 30px;
+            font-weight: 600;
+        }
+        .container .text.first-text{
+            color: white;
+        }
+        .text.sec-text::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: #010718;
+            border-left: 2px solid #4070f4;
+            animation: animate 4s steps(12) infinite;
+        }
+        @keyframes animate{
+            40%, 60%{
+                left: 100%;
+            }
+            100%{
+                left: 0%;
+            }
+        }
+      </style>
+</head>
+<body>
+    <div class="container">
+        <span class="text first-text">I'm a</span>
+        <span class="text sec-text"></span>
+    </div>
+
+    <script> 
+        let text = document.querySelector(".sec-text")
+
+        let  textlaod = () => {
+            setTimeout(() => {
+                text.innerHTML = "&nbsp;Frontend Developer"
+            }, 0);
+            setTimeout(() => {
+                text.innerHTML = "&nbsp;UI/UX Designer"
+            }, 4000);
+            setTimeout(() => {
+                text.innerHTML = "&nbsp;Backend Developer"
+            }, 8000);
+        }
+
+        textlaod()
+        setInterval(textlaod, 12000)
+    </script>
+</body>
+</html>
